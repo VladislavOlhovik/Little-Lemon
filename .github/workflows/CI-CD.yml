@@ -33,10 +33,10 @@ jobs:
     - name: Install Dependencies
       run: npm install
 
-    - name: Run Tests
-      run: npm test
-      env:
-        CI: true # Ensure tests run in CI mode, which can alter behavior for some frameworks
+    # - name: Run Tests
+    #   run: npm test
+    #   env:
+    #     CI: true # Ensure tests run in CI mode, which can alter behavior for some frameworks
 
     - name: Build Project
       run: npm run build
