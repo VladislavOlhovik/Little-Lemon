@@ -1,0 +1,51 @@
+name: CI/CD pipeline for Build, Test and Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Cache Node.js modules
+      uses: actions/cache@v2
+      with:
+        # Define path to cache
+        path: ~/.npm
+        # Define key for cache
+        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+        # Define restore keys to find the cache if exact match is not found
+        restore-keys: |
+          ${{ runner.os }}-node-
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16.14.0'
+        cache: 'npm'
+
+    - name: Install Dependencies
+      run: npm install
+
+    - name: Run Tests
+      run: npm test
+      env:
+        CI: true # Ensure tests run in CI mode, which can alter behavior for some frameworks
+
+    - name: Build Project
+      run: npm run build
+      env:
+        VITE_BASE: '/Little-Lemon/'
+
+    - name: Deploy to GitHub Pages
+      uses: JamesIves/github-pages-deploy-action@4.1.5
+      with:
+        branch: gh-pages
+        folder: dist
+        token: ${{ secrets.GITHUB_TOKEN }}
