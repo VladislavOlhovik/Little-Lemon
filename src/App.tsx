@@ -1,13 +1,7 @@
-import './App.css'
+import './App.css';
 
 function App() {
-  
-
-  return (
-    <>
-      Little Lemon
-    </>
-  )
+  return <>Little Lemon</>;
 }
 
-export default App
+export default App;
