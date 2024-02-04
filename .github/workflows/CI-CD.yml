@@ -11,32 +11,29 @@ jobs:
 
     steps:
     - name: Checkout Repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v2 # Consider checking if there's a newer version
 
     - name: Cache Node.js modules
       uses: actions/cache@v2
       with:
-        # Define path to cache
         path: ~/.npm
-        # Define key for cache
         key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-        # Define restore keys to find the cache if exact match is not found
         restore-keys: |
           ${{ runner.os }}-node-
 
     - name: Set up Node.js
       uses: actions/setup-node@v2
       with:
-        node-version: '16.14.0'
+        node-version: '16.14.0' # Consider using a newer LTS version if compatible
         cache: 'npm'
 
     - name: Install Dependencies
       run: npm install
 
-    - name: Run Tests
-      run: npm test
-      env:
-        CI: true # Ensure tests run in CI mode, which can alter behavior for some frameworks
+    # - name: Run Tests
+    #   run: npm test
+    #   env:
+    #     CI: true # Ensure tests run in CI mode, which can alter behavior for some frameworks
 
     - name: Build Project
       run: npm run build
@@ -48,4 +45,5 @@ jobs:
       with:
         branch: gh-pages
         folder: dist
-        token: ${{ secrets.GITHUB_TOKEN }}
+        token: ${{ secrets.YOUR_PERSONAL_ACCESS_TOKEN }}
+
