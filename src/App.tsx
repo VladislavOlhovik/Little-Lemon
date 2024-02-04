@@ -1,8 +1,14 @@
-import React from 'react';
 import './App.css';
 
 function App() {
-  return <>Little Lemon</>;
+  return (
+    <>
+      <header>Little Lemon</header>
+      <nav>nav</nav>
+      <main>Main</main>
+      <footer>Footer</footer>
+    </>
+  );
 }
 
 export default App;
