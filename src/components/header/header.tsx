@@ -1,5 +1,5 @@
-import { LogoSVG } from '@icons';
-import { NavLinks, ThemeSwitch } from '@components';
+import { LogoSVG } from '@/icons';
+import { NavLinks, ThemeSwitch } from '@/components';
 
 import * as SC from './header.styled';
 

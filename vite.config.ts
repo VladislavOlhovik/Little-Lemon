@@ -9,12 +9,9 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src/'),
-      // '@store': `${path.resolve(__dirname, './src/store')}`,
-      '@icons': `${path.resolve(__dirname, './src/icons')}`,
-      '@components': `${path.resolve(__dirname, './src/components')}`,
-      // '@helpers': `${path.resolve(__dirname, './src/helpers')}`,
-      // '@styles': `${path.resolve(__dirname, './src/styles')}`,
-      '@theme': `${path.resolve(__dirname, './src/theme')}`,
+      components: path.resolve(__dirname, './src/components/'),
+      icons: path.resolve(__dirname, './src/icons/'),
+      theme: path.resolve(__dirname, './src/theme/'),
     },
   },
 });

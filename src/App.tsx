@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { ThemeProvider } from 'styled-components';
 
-import { Header } from '@components';
-import { GlobalStyle, styles } from '@theme';
+import { Header } from '@/components';
+import { GlobalStyle, styles } from '@/theme';
 
 import './App.css';
 

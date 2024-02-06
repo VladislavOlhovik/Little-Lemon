@@ -1,4 +1,4 @@
-import { MoonSvg, SunSvg } from '@icons';
+import { MoonSvg, SunSvg } from '@/icons';
 
 import * as SC from './theme-switch.styled';
 
