@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { ThemeProvider } from 'styled-components';
 
-import { Header } from '@/components';
+import { Header, Hero, Main } from '@/components';
 import { GlobalStyle, styles } from '@/theme';
 
 import './App.css';
@@ -14,8 +14,9 @@ function App() {
   return (
     <ThemeProvider theme={{ styles, theme }}>
       <Header toggleTheme={toggleTheme} theme={theme} />
-      <header>Little Lemon</header>
-      <main>Main</main>
+      <Main>
+        <Hero />
+      </Main>
       <footer>Footer</footer>
       <GlobalStyle />
     </ThemeProvider>
