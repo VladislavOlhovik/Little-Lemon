@@ -1,6 +1,12 @@
+export { Image } from './image/image';
+// export { Link } from './link/link';
+export { Preloader } from './preloader/preloader';
+export { Main } from './styled-components/main.styled';
 export { Header } from './header/header';
 export { NavLinks } from './nav-links/nav-links';
 export { ThemeSwitch } from './theme-switch/theme-switch';
 export { Hero } from './hero/hero';
 export { Button } from './button/button';
-export { Main } from './styled-components/main.styled';
+export { Highlights } from './highlights/highlights';
+export { Meal } from './meal/meal';
+export { Footer } from './footer/footer';

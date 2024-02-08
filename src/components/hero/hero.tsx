@@ -1,10 +1,11 @@
 import { Button } from '@/components';
-import { HeroContainer } from './hero.styled';
+
+import * as SC from './hero.styled';
 
 export const Hero = () => {
   return (
-    <HeroContainer>
-      <div>
+    <SC.HeroContainer>
+      <div className='restaurant-info'>
         <h1>Little Lemon</h1>
         <h2>Chicago</h2>
         <p>
@@ -13,10 +14,10 @@ export const Hero = () => {
         </p>
         <Button title='Reserve a Table' />
       </div>
-      <img
+      <SC.HeroImg
         src='restauranfood.webp'
         alt='Photo of food serving in Little Lemon'
       />
-    </HeroContainer>
+    </SC.HeroContainer>
   );
 };

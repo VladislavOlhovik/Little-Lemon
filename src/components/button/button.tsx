@@ -1,9 +1,9 @@
-import { ButtonContainer } from './button.styled';
+import * as SC from './button.styled';
 
 interface IButton {
   title: string;
 }
 
 export const Button = ({ title }: IButton) => {
-  return <ButtonContainer>{title}</ButtonContainer>;
+  return <SC.ButtonContainer>{title}</SC.ButtonContainer>;
 };

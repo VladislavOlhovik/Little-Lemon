@@ -11,6 +11,6 @@ export const ButtonContainer = styled.button`
   outline: inherit;
   transition: transform 0.5s ease-in-out;
   &:hover {
-    transform: scale(0.9);
+    transform: scale(1.2);
   }
 `;

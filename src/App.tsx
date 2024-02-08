@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import { ThemeProvider } from 'styled-components';
 
-import { Header, Hero, Main } from '@/components';
+import { Footer, Header, Hero, Highlights, Main } from '@/components';
 import { GlobalStyle, styles } from '@/theme';
 
+import * as SC from 'styled-components';
 import './App.css';
 
 function App() {
@@ -12,14 +12,15 @@ function App() {
     setTheme(theme => (theme === 'light' ? 'dark' : 'light'));
   };
   return (
-    <ThemeProvider theme={{ styles, theme }}>
+    <SC.ThemeProvider theme={{ styles, theme }}>
       <Header toggleTheme={toggleTheme} theme={theme} />
       <Main>
         <Hero />
+        <Highlights />
       </Main>
-      <footer>Footer</footer>
+      <Footer />
       <GlobalStyle />
-    </ThemeProvider>
+    </SC.ThemeProvider>
   );
 }
 

@@ -9,9 +9,13 @@ const links = [
   'Login',
 ];
 
-export const NavLinks = () => {
+interface INavLinks {
+  className?: string;
+}
+
+export const NavLinks = ({ className }: INavLinks) => {
   return (
-    <SC.NavContainer>
+    <SC.NavContainer className={className}>
       <ul>
         {links.map(el => {
           return <li key={el}>{el}</li>;

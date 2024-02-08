@@ -6,6 +6,7 @@ export const styles = {
       primary: '#F4CE14', // Yellow
       secondary: '#495E57', // Dark Slate Gray
       highlighted: '#EE9972', // Orange
+      mealsBackground: '#EDEFEE', // Grey
       background: '#FFFFFF', // White
       text: '#000000', // Black
     },
@@ -13,7 +14,8 @@ export const styles = {
       primary: '#F4CE14', // Yellow
       secondary: '#495E57', // Dark Slate Gray
       highlighted: '#EE9972', // Orange
-      background: '#000000', // Black
+      mealsBackground: '#EDEFEE', // Grey
+      background: '#0c3122', // Black
       text: '#FFFFFF', // White,
     },
   },
@@ -24,12 +26,13 @@ export const styles = {
     fontSizeDisplay: '64pt', // Display Title
     fontSizeMedium: '18pt', // Lead text/CTA
     fontSizeSmall: '16pt', // Card Title and Paragraph
+    fontSizeLink: '14pt', // Links
     fontWeightBold: 'bold', // Bold font weight
-    fontWeightMedium: 'medium', // Bold font weight
+    fontWeightMedium: 'normal', // Bold font weight
     lineHeight: '1.5', // Line height for paragraph
   },
   borderRadius: '16px', // Rounded corners for elements
-  blockPadding: '0 15rem', // Margin for blocks
+  blockSidePadding: '15rem', // Margin sides for blocks
 };
 
 export const GlobalStyle = createGlobalStyle`
