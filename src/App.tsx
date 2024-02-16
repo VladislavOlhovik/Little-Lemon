@@ -1,7 +1,9 @@
 import { useState } from 'react';
+import { Route, Routes } from 'react-router-dom';
 
-import { Footer, Header, Hero, Highlights, Main } from '@/components';
+import { Footer, Header, Main } from '@/components';
 import { GlobalStyle, styles } from '@/theme';
+import { BookingPage, ConfirmedBooking, Home } from '@/pages';
 
 import * as SC from 'styled-components';
 import './App.css';
@@ -15,8 +17,11 @@ function App() {
     <SC.ThemeProvider theme={{ styles, theme }}>
       <Header toggleTheme={toggleTheme} theme={theme} />
       <Main>
-        <Hero />
-        <Highlights />
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/booking' element={<BookingPage />} />
+          <Route path='/confirmed-booking' element={<ConfirmedBooking />} />
+        </Routes>
       </Main>
       <Footer />
       <GlobalStyle />

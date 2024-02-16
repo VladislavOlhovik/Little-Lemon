@@ -7,7 +7,9 @@ export const NavContainer = styled.nav`
     margin: 0;
     padding: 0 1rem 0 0;
   }
-  & ul li {
-    margin-left: 2rem;
+  & ul li a {
+    text-decoration: inherit;
+    color: inherit;
+    padding: 1rem;
   }
 `;
