@@ -1,12 +1,14 @@
+import { Link } from 'react-router-dom';
+
 import * as SC from './nav-links.styled';
 
 const links = [
-  'Home',
-  'About',
-  'Menu',
-  'Reservations',
-  'Order Online',
-  'Login',
+  { title: 'Home', link: '/' },
+  { title: 'About', link: '/' },
+  { title: 'Menu', link: '/' },
+  { title: 'Reservations', link: '/booking' },
+  { title: 'Order Online', link: '/' },
+  { title: 'Login', link: '/' },
 ];
 
 interface INavLinks {
@@ -17,8 +19,12 @@ export const NavLinks = ({ className }: INavLinks) => {
   return (
     <SC.NavContainer className={className}>
       <ul>
-        {links.map(el => {
-          return <li key={el}>{el}</li>;
+        {links.map(({ link, title }) => {
+          return (
+            <li key={title}>
+              <Link to={link}>{title}</Link>
+            </li>
+          );
         })}
       </ul>
     </SC.NavContainer>
