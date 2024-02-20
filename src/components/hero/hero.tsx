@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import { Button } from '@/components';
 
 import * as SC from './hero.styled';
@@ -12,7 +14,9 @@ export const Hero = () => {
           We are a family owned Mediterranean restaurant, focused on traditional
           recipes served with a modern twist.
         </p>
-        <Button title='Reserve a Table' />
+        <Link to='/book'>
+          <Button title='Reserve a Table' />
+        </Link>
       </div>
       <SC.HeroImg
         src='restauranfood.webp'

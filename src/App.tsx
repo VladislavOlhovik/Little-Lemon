@@ -19,8 +19,8 @@ function App() {
       <Main>
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/booking' element={<BookingPage />} />
-          <Route path='/confirmed-booking' element={<ConfirmedBooking />} />
+          <Route path='/book' element={<BookingPage />} />
+          <Route path='/book/:id' element={<ConfirmedBooking />} />
         </Routes>
       </Main>
       <Footer />

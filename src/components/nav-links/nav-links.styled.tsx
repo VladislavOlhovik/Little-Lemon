@@ -12,4 +12,7 @@ export const NavContainer = styled.nav`
     color: inherit;
     padding: 1rem;
   }
+  .activeLink {
+    color: ${({ theme }) => theme.styles.colors.light.primary};
+  }
 `;

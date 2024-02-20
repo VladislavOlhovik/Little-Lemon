@@ -32,7 +32,7 @@ export const styles = {
     lineHeight: '1.5', // Line height for paragraph
   },
   borderRadius: '16px', // Rounded corners for elements
-  blockSidePadding: '15rem', // Margin sides for blocks
+  blockSidePadding: '18vw', // Margin sides for blocks
 };
 
 export const GlobalStyle = createGlobalStyle`
