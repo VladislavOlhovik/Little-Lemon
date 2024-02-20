@@ -1,9 +1,4 @@
-import {
-  fetchFakeData,
-  availableTables,
-  todayDate,
-  timeOptions,
-} from '@/utils';
+import { fetchFakeData, availableTables, timeOptions } from '@/utils';
 
 class API {
   _baseURL = 'https://future/api';
