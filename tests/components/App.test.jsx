@@ -1,14 +1,8 @@
-import { HashRouter } from 'react-router-dom';
 import { render, screen } from '@testing-library/react';
 import App from "../../src/App";
+import {withContext} from '../utils'
 
-const AppWithContext = () => {
-  return(
-    <HashRouter>
-      <App />
-    </HashRouter>
-  )
-}
+const AppWithContext = withContext(App)
 
 describe('App', () => {
   it('renders headline', () => {

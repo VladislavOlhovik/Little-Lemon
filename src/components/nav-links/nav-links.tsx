@@ -1,14 +1,14 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import * as SC from './nav-links.styled';
 
 const links = [
   { title: 'Home', link: '/' },
-  { title: 'About', link: '/' },
-  { title: 'Menu', link: '/' },
-  { title: 'Reservations', link: '/booking' },
-  { title: 'Order Online', link: '/' },
-  { title: 'Login', link: '/' },
+  { title: 'About', link: '/about' },
+  { title: 'Menu', link: '/menu' },
+  { title: 'Reserve a Table', link: '/book' },
+  { title: 'Order Online', link: '/food_order' },
+  { title: 'Login', link: '/login' },
 ];
 
 interface INavLinks {
@@ -22,7 +22,12 @@ export const NavLinks = ({ className }: INavLinks) => {
         {links.map(({ link, title }) => {
           return (
             <li key={title}>
-              <Link to={link}>{title}</Link>
+              <NavLink
+                className={({ isActive }) => (isActive ? 'activeLink' : '')}
+                to={link}
+              >
+                {title}
+              </NavLink>
             </li>
           );
         })}
