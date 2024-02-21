@@ -18,6 +18,7 @@ export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
 export {
   fetchAvailableTimeOptions,
   fetchAvailableTables,
+  bookTable,
 } from './reducers/booking-reducer.ts';
-export const { updateDateAC, updateTimeAC, updatePeopleAC } =
+export const { updateDateAC, updateTimeAC, updatePeopleAC, resetAC } =
   bookingReducer.actions;

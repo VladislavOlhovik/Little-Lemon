@@ -5,6 +5,7 @@ import { APIService } from '@/API';
 import {
   AvailableDatesType,
   AvailableTablesType,
+  BookTableType,
   BookingState,
   ReservationDetails,
 } from '../types';
@@ -23,6 +24,7 @@ export const initialState: BookingState = {
     numOfPeople: null,
   },
   isLoading: false,
+  isReserved: false,
 };
 
 export const fetchAvailableTimeOptions = createAsyncThunk(
@@ -44,6 +46,13 @@ export const fetchAvailableTables = createAsyncThunk(
       selectedTime,
       selectedNumOfPeople,
     );
+    return response;
+  },
+);
+export const bookTable = createAsyncThunk(
+  'post/bookTable',
+  async (data: BookTableType) => {
+    const response = APIService.bootTable(data);
     return response;
   },
 );
@@ -70,6 +79,11 @@ export const bookingReducer = createSlice({
         state.bookingData = initialState.bookingData;
       }
     },
+    resetAC: state => {
+      state.initData = initialState.initData;
+      state.bookingData = initialState.bookingData;
+      state.isReserved = initialState.isReserved;
+    },
   },
   extraReducers: builder => {
     builder
@@ -94,6 +108,13 @@ export const bookingReducer = createSlice({
           state.isLoading = false;
           state.bookingData = { ...state.bookingData, ...action.payload };
         },
-      );
+      )
+      .addCase(bookTable.pending, state => {
+        state.isLoading = true;
+      })
+      .addCase(bookTable.fulfilled, state => {
+        state.isLoading = false;
+        state.isReserved = true;
+      });
   },
 });

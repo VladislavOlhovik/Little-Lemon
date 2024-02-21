@@ -1,3 +1,4 @@
+import { BookTableType } from '@/store/types';
 import { fetchFakeData, availableTables, timeOptions } from '@/utils';
 
 class API {
@@ -21,6 +22,26 @@ class API {
         time: selectedTime,
         tables: availableTables,
         numOfPeople: peopleCount,
+      });
+      return response;
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  }
+  async bootTable({
+    persanalData,
+    date,
+    time,
+    tableNumber,
+    numOfPeople,
+  }: BookTableType) {
+    try {
+      const response = await fetchFakeData({
+        persanalData,
+        date,
+        time,
+        tableNumber,
+        numOfPeople,
       });
       return response;
     } catch (error) {

@@ -1,9 +1,12 @@
 export { Image } from './image/image';
 export { DateInput } from './date-input/date-input';
 export { TimeInput } from './time-input/time-input';
+export { SelectInput } from './select-input/select-input';
+export { TextInput } from './text-input/text-input';
 export { TablesMap } from './tables-map/tables-map';
 export { PeopleInput } from './people-input/people-input';
 export { Preloader } from './preloader/preloader';
+export { Alert } from './alert/alert';
 export { Main } from './styled-components/main.styled';
 export { Header } from './header/header';
 export { NavLinks } from './nav-links/nav-links';
